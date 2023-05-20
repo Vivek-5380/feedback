@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Review</title>
+    
+</head>
+<body>
+    <form action="/" method="POST">
+        {% csrf_token %}
+
+        {% comment %} {% if has_error %}
+           <p>Entered input is invalid please try again! </p>
+        {% endif %} {% endcomment %}
+        {% comment %} <label for="username">Your Name</label>
+        <input id="username" name="username" type="text" > {% endcomment %}
+
+        {{ form }}
+        <button>Send</button>
+    </form>
+</body>
+</html>
